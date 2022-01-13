@@ -29,20 +29,20 @@ regressor.fit(X_train, y_train)
 
 # Predicting the Test set results
 y_pred = regressor.predict(X_test)
-np.set_printoptions(precision=2)
+np.set_printoptions(precision=3)
 #print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
 
 # Visualising the Training set results
-plt.scatter(X_train, y_train, color = 'red')
-plt.plot(X_train, regressor.predict(X_train), color = 'blue')
+plt.scatter(X_train, y_train, color = 'blue')
+plt.plot(X_train, regressor.predict(X_train), color = 'green')
 plt.title('Bandgap vs Pressure (Training set)')
 plt.xlabel('Pressure')
 plt.ylabel('Bandgap')
 plt.show()
 
 # Visualising the Test set results
-plt.scatter(X_test, y_test, color = 'red')
-plt.plot(X_train, regressor.predict(X_train), color = 'blue')
+plt.scatter(X_test, y_test, color = 'blue')
+plt.plot(X_train, regressor.predict(X_train), color = 'green')
 plt.title('Bandgap vs Pressure (Test set)')
 plt.xlabel('Pressure')
 plt.ylabel('Bandgap')
